@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.example.trsmis.model.Trsmis" />
+
+        <variable
+            name="trsmisPrblmTitle"
+            type="String" />
+
+        <variable
+            name="trsmisPrblm"
+            type="String" />
+
+        <variable
+            name="trsmisPendTitle"
+            type="String" />
+
+        <variable
+            name="trsmisPend"
+            type="String" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".trsmis.TrsmisDetailActivity">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/trsmis_detail_toolbar_cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="0dp"
+            app:cardElevation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:id="@+id/trsmis_detail_toolbar_view"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/trsmis_detail_toolBar_text"
+                    style="@style/CustomTextViewEB"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/toolsBar_size"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center"
+                    android:text="@string/str_trsmis_toolbar"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/toolBar_text_size"
+                    app:layout_constraintBottom_toBottomOf="@id/trsmis_detail_toolbar_view"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/trsmis_detail_toolbar_view" />
+
+                <ImageView
+                    android:id="@+id/trsmis_detail_back_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="24dp"
+                    android:src="@drawable/ic_back"
+                    app:layout_constraintBottom_toBottomOf="@id/trsmis_detail_toolbar_view"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="14dp"
+            android:layout_height="match_parent"
+            android:layout_below="@id/trsmis_detail_toolbar_cardView"
+            android:fillViewport="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <View
+                    android:id="@+id/trsmis_detail_top_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="17dp"
+                    android:layout_marginEnd="15dp"
+                    android:background="@color/colorPrimary" />
+
+                <LinearLayout
+                    android:id="@+id/trsmis_detail_1_title_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/trsmis_detail_top_line"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:background="@color/colorf7f7f9"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/CustomTextViewB"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="0dp"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="15dp"
+                        android:text="@string/group"
+                        android:textColor="@color/color222222"
+                        android:textSize="13dp" />
+
+                    <View
+                        android:layout_width="0.5dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorE2E2E2" />
+
+                    <TextView
+                        style="@style/CustomTextViewB"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/writer"
+                        android:textColor="@color/color222222"
+                        android:textSize="13dp" />
+
+                    <View
+                        android:layout_width="0.5dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorE2E2E2" />
+
+                    <TextView
+                        style="@style/CustomTextViewB"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/dlr"
+                        android:textColor="@color/color222222"
+                        android:textSize="13dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/trsmis_detail_1_content_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/trsmis_detail_1_title_layout"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:paddingTop="18dp"
+                        android:paddingBottom="18dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/trsmis_detail_custDstnct_cardView"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginStart="10dp"
+                            app:cardBackgroundColor="@color/colorPrimary"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="0dp">
+
+                            <TextView
+                                style="@style/CustomTextViewEB"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="@{model.custDstnctSoNm}"
+                                tools:text="진"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="13dp" />
+                        </androidx.cardview.widget.CardView>
+
+
+                        <TextView
+                            style="@style/CustomTextViewB"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="6dp"
+                            android:textColor="@color/color555555"
+                            android:textSize="14dp"
+                            android:text="@{model.positTeamNm}"
+                            tools:text="경영지원팀" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="0.5dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorE2E2E2" />
+
+                    <TextView
+                        style="@style/CustomTextViewR"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@{model.writrNm}"
+                        android:textColor="@color/color555555"
+                        android:textSize="14dp"
+                        tools:text="홍당무" />
+
+                    <View
+                        android:layout_width="0.5dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorE2E2E2" />
+
+                    <TextView
+                        style="@style/CustomTextViewR"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:text="@{model.dlrNm}"
+                        android:gravity="center"
+                        android:textColor="@color/color555555"
+                        android:textSize="14dp"
+                        tools:text="홍무당" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/trsmis_detail_2_title_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/trsmis_detail_1_content_layout"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:background="@color/colorf7f7f9"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/CustomTextViewB"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="0dp"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="15dp"
+                        android:text="@string/inputTime"
+                        android:textColor="@color/color222222"
+                        android:textSize="13dp" />
+
+                    <View
+                        android:layout_width="0.5dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorE2E2E2" />
+
+                    <TextView
+                        style="@style/CustomTextViewB"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/status"
+                        android:textColor="@color/color222222"
+                        android:textSize="13dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/trsmis_detail_2_content_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/trsmis_detail_2_title_layout"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/CustomTextViewR"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="0dp"
+                        android:layout_weight="3"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="15dp"
+                        android:text="@{model.firstInputDt}"
+                        android:textColor="@color/color777777"
+                        android:textSize="14dp"
+                        tools:text="2020 / 01 / 01" />
+
+                    <View
+                        android:layout_width="0.5dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorE2E2E2" />
+
+                    <LinearLayout
+                        style="@style/CustomTextViewR"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/status"
+                        android:textColor="@color/color222222"
+                        android:textSize="14dp">
+
+                        <TextView
+                            android:id="@+id/trsmis_detail_status_text"
+                            style="@style/CustomTextViewB"
+                            android:layout_width="51dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="9dp"
+                            android:background="@drawable/bg_trsmis_state"
+                            android:gravity="center"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="5dp"
+                            android:textColor="@color/colorPrimary"
+                            android:text="@{model.prblmDlngStatNm}"
+                            android:textSize="12dp"
+                            tools:text="확인" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/trsmis_detail_3_title_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/trsmis_detail_2_content_layout"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:background="@color/colorf7f7f9"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/CustomTextViewB"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="0dp"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="15dp"
+                        android:text="@string/trsmis"
+                        android:textColor="@color/color222222"
+                        android:textSize="13dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/trsmis_detail_3_content_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/trsmis_detail_3_title_layout"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/CustomTextViewR"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="0dp"
+                        android:paddingTop="15dp"
+                        android:text="@{trsmisPrblmTitle}"
+                        android:textColor="@color/color333333"
+                        android:textSize="13dp"
+                        tools:text="[관리자>기타]" />
+
+                    <TextView
+                        style="@style/CustomTextViewR"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="10dp"
+                        android:text="@{trsmisPrblm}"
+                        android:paddingTop="25dp"
+                        android:paddingEnd="10dp"
+                        android:paddingBottom="15dp"
+                        android:textColor="@color/color888888"
+                        android:lineSpacingExtra="3dp"
+                        android:textSize="13dp"
+                        tools:text="지난번 법착수 관련 협정건 로하스 건설로 캡쳐해서 전달해주면 된다고 합니다.이상입니다." />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/trsmis_detail_4_title_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/trsmis_detail_3_content_layout"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:background="@color/colorf7f7f9"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/CustomTextViewB"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="0dp"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="15dp"
+                        android:text="@string/statusAndResult"
+                        android:textColor="@color/color222222"
+                        android:textSize="13dp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/trsmis_detail_4_content_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/trsmis_detail_4_title_layout"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="16dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/CustomTextViewR"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="0dp"
+                        android:text="@{trsmisPendTitle}"
+                        android:paddingTop="15dp"
+                        android:textColor="@color/color333333"
+                        android:textSize="13dp"
+                        tools:text="[완료]" />
+
+                    <TextView
+                        style="@style/CustomTextViewR"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="10dp"
+                        android:lineSpacingExtra="3dp"
+                        android:text="@{trsmisPend}"
+                        android:paddingTop="25dp"
+                        android:paddingEnd="10dp"
+                        android:paddingBottom="15dp"
+                        android:textColor="@color/color888888"
+                        android:textSize="13dp"
+                        tools:text="지난번 법착수 관련 협정건 로하스 건설로 캡쳐해서 전달해주면 된다고 합니다.이상입니다.지난번 법착수 관련 협정건 로하스 건설로 캡쳐해서 전달해주면 된다고 합니다.이상입니다.지난번 법착수 관련 협정건 로하스 건설로 캡쳐해서 전달해주면 된다고 합니다.이상입니다.지난번 법착수 관련 협정건 로하스 건설로 캡쳐해서 전달해주면 된다고 합니다.이상입니다.지난번 법착수 관련 협정건 로하스 건설로 캡쳐해서 전달해주면 된다고 합니다.이상입니다.지난번 법착수 관련 협정건 로하스 건설로 캡쳐해서 전달해주면 된다고 합니다.이상입니다.지난번 법착수 관련 협정건 로하스 건설로 캡쳐해서 전달해주면 된다고 합니다.이상입니다.지난번 법착수 관련 협정건 로하스 건설로 캡쳐해서 전달해주면 된다고 합니다.이상입니다.지난번 법착수 관련 협정건 로하스 건설로 캡쳐해서 전달해주면 된다고 합니다.이상입니다.지난번 법착수 관련 협정건 로하스 건설로 캡쳐해서 전달해주면 된다고 합니다.이상입니다.지난번 법착수 관련 협정건 로하스 건설로 캡쳐해서 전달해주면 된다고 합니다.이상입니다.지난번 법착수 관련 협정건 로하스 건설로 캡쳐해서 전달해주면 된다고 합니다.이상입니다.지난번 법착수 관련 협정건 로하스 건설로 캡쳐해서 전달해주면 된다고 합니다.이상입니다.지난번 법착수 관련 협정건 로하스 건설로 캡쳐해서 전달해주면 된다고 합니다.이상입니다.지난번 법착수 관련 협정건 로하스 건설로 캡쳐해서 전달해주면 된다고 합니다.이상입니다.지난번 법착수 관련 협정건 로하스 건설로 캡쳐해서 전달해주면 된다고 합니다.이상입니다.지난번 법착수 관련 협정건 로하스 건설로 캡쳐해서 전달해주면 된다고 합니다.이상입니다.지난번 법착수 관련 협정건 로하스 건설로 캡쳐해서 전달해주면 된다고 합니다.이상입니다.지난번 법착수 관련 협정건 로하스 건설로 캡쳐해서 전달해주면 된다고 합니다.이상입니다.지난번 법착수 관련 협정건 로하스 건설로 캡쳐해서 전달해주면 된다고 합니다.이상입니다.지난번 법착수 관련 협정건 로하스 건설로 캡쳐해서 전달해주면 된다고 합니다.이상입니다.지난번 법착수 관련 협정건 로하스 건설로 캡쳐해서 전달해주면 된다고 합니다.이상입니다." />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/trsmis_detail_bottom_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:background="@color/colorCCCCCC" />
+            </RelativeLayout>
+        </androidx.core.widget.NestedScrollView>
+    </RelativeLayout>
+</layout>

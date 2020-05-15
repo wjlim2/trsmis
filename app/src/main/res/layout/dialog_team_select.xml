@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/team_text"
+            style="@style/CustomTextViewB"
+            android:layout_width="wrap_content"
+            android:layout_height="65dp"
+            android:layout_marginStart="25dp"
+            android:gravity="center"
+            android:text="팀 선택"
+            android:textColor="@color/color333333"
+            android:textSize="16dp" />
+
+        <ImageView
+            android:id="@+id/dialog_team_back_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:padding="25dp"
+            android:src="@drawable/ic_dialog_close" />
+
+        <View
+            android:id="@+id/team_line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/team_text"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:background="@color/colorCCCCCC" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/team_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/team_line"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginEnd="15dp"
+            android:clipToPadding="false" />
+
+
+        <RelativeLayout
+            android:id="@+id/company_dialog_confirm_text"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/team_recyclerView"
+            android:background="@color/colorPrimary">
+
+            <TextView
+                android:id="@+id/dialog_biz_confirm_text"
+                style="@style/CustomTextViewEB"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:drawableEnd="@drawable/ic_dialog_check"
+                android:drawablePadding="10dp"
+                android:gravity="center"
+                android:text="적용하기"
+                android:textColor="@color/colorWhite"
+                android:textSize="16dp" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimaryBackground">#f7f9fc</color>
+    <color name="colorPrimary">#258bcc</color>
+    <color name="colorPrimary15">#26258BCC</color>
+    <color name="colorPrimaryAlpha">#3F8BC53F</color>
+    <color name="colorAccent">@color/colorPrimary</color>
+    <color name="colorStatus">#686868</color>
+    <color name="colorGray">#c0c0c0</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorRed">#FF0000</color>
+    <color name="colorCount">#f82525</color>
+
+    <color name="colorPastelBlue">#C9E0EE</color>
+    <color name="colorLoginPressed">#278ACA</color>
+    <color name="colorLogin">#89A7BB</color>
+    <color name="colorTitleText">#212121</color>
+
+    <color name="colorDF">#df2020</color>
+    <color name="color86">#868589</color>
+    <color name="colorTransparent">#00000000</color>
+    <color name="colorText">#3e3e3e</color>
+    <color name="color9D">#9d9d9d</color>
+    <color name="colorHeaderBack">#ebebeb</color>
+    <color name="colorLine">#979797</color>
+
+    <color name="color_1000">#666</color>
+    <color name="color_2000">#ff8000</color>
+    <color name="color_3000">#009900</color>
+    <color name="color_4000">#3f63ff</color>
+    <color name="color_5000">#9322ee</color>
+    <color name="color_6000_Max">#ff0000</color>
+
+
+    <color name="colorTrsmis">#ffdfc2</color>
+
+    <!--추가-->
+    <color name="coloraaaaaa">#aaaaaa</color>
+    <color name="color888888">#888888</color>
+    <color name="color6f49a5">#6f49a5</color>
+    <color name="color266F49A5">#266F49A5</color>
+    <color name="color777777">#777777</color>
+    <color name="colorf7f7f9">#f7f7f9</color>
+    <color name="color333333">#333333</color>
+    <color name="color258bcc">#258bcc</color>
+    <color name="colorBBBBBB">#bbbbbb</color>
+    <color name="colorE5e5e5">#e5e5e5</color>
+    <color name="colorC4c4c4">#c4c4c4</color>
+    <color name="colordddddd">#dddddd</color>
+    <color name="color444444">#444444</color>
+    <color name="colorCED3D4">#CED3D4</color>
+    <color name="color3b9cd9">#3b9cd9</color>
+    <color name="colorD6edfb">#d6edfb</color>
+    <color name="colora8a8ae">#a8a8ae</color>
+    <color name="color16151e">#16151e</color>
+    <color name="coloreeeeee">#eeeeee</color>
+    <color name="colorDDDDDD">#DDDDDD</color>
+    <color name="color222222">#222222</color>
+    <color name="color0faf8b">#0faf8b</color>
+    <color name="color535454">#535454</color>
+    <color name="colorfafafb">#fafafb</color>
+    <color name="color638da8">#638da8</color>
+    <color name="color666666">#666666</color>
+    <color name="color999999">#999999</color>
+    <color name="colorCCCCCC">#cccccc</color>
+    <color name="color555555">#555555</color>
+    <color name="color4591c1">#4591c1</color>
+    <color name="colorbc73b5">#bc73b5</color>
+    <color name="color87b868">#87b868</color>
+    <color name="colore23a3a">#e23a3a</color>
+    <color name="color689ec1">#689ec1</color>
+    <color name="coloraa58be">#aa58be</color>
+    <color name="color2c78a8">#2c78a8</color>
+    <color name="colorE2E2E2">#E2E2E2</color>
+    <color name="colorff6672">#ff6672</color>
+    <color name="colorff0000">#ff0000</color>
+    <color name="color111111">#111111</color>
+
+</resources>

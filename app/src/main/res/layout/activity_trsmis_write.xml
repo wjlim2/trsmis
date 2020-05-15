@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".trsmiswrite.TrsmisWriteActivity">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.example.trsmis.ui.viewmodel.TrsmisWriteViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/bid_setting_toolbar_cardView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="0dp"
+            app:cardElevation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:id="@+id/trsmis_write_toolbar_view"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:background="@color/colorPrimary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    style="@style/CustomTextViewEB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/write"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/toolBar_text_size"
+                    app:layout_constraintBottom_toBottomOf="@id/trsmis_write_toolbar_view"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <ImageView
+                    android:id="@+id/trsmis_write_back_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="24dp"
+                    android:src="@drawable/ic_back"
+                    app:layout_constraintBottom_toBottomOf="@id/trsmis_write_toolbar_view"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/trsmis_write_team_text"
+                    style="@style/CustomTextViewR"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginEnd="15dp"
+                    android:background="@drawable/linear_border_round"
+                    android:drawableEnd="@drawable/ic_triangle"
+                    android:drawablePadding="4dp"
+                    android:paddingStart="13dp"
+                    android:paddingTop="4dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="4dp"
+                    android:text="@string/apor"
+                    android:textColor="@color/color888888"
+                    android:textSize="14dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/trsmis_write_toolbar_view" />
+
+                <TextView
+                    android:id="@+id/trsmis_write_display_text"
+                    style="@style/CustomTextViewB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="19dp"
+                    android:gravity="center"
+                    android:text="@string/str_trsmis_write_display"
+                    android:textColor="@color/color333333"
+                    android:textSize="17dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/trsmis_write_toolbar_view"
+
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <View
+            android:id="@+id/trsmis_top_line"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="19dp"
+            android:layout_marginEnd="15dp"
+            android:background="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bid_setting_toolbar_cardView" />
+
+        <EditText
+            android:id="@+id/trsmis_write_display_edit"
+            style="@style/EditTextStyleRTrsmis"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/colorf7f7f9"
+            android:gravity="start"
+            android:hint="@string/enter_content"
+            android:inputType="textMultiLine"
+            android:padding="22dp"
+            android:textSize="14dp"
+            app:layout_constraintBottom_toTopOf="@id/trsmis_write_requst_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/trsmis_top_line" />
+
+        <RelativeLayout
+            android:id="@+id/trsmis_write_requst_layout"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:background="@color/color2c78a8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/trsmis_write_requst_btn"
+                style="@style/CustomTextViewEB"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:drawableEnd="@drawable/ic_dialog_check"
+                android:drawablePadding="10dp"
+                android:gravity="center"
+                android:text="@string/str_trsmis_write_request"
+                android:textColor="@color/colorWhite"
+                android:textSize="16dp" />
+
+        </RelativeLayout>
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:indeterminate="true"
+            android:visibility="@{safeUnbox(viewmodel.loading)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="gone" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

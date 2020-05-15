@@ -1,0 +1,92 @@
+<resources>
+    <string name="app_name">Trsmis</string>
+    <string name="intro_copy">Copyright 2019.SYSOFT Corp. All Rights Reserved</string>
+    <string name="intro_update">모바일 업데이트가 필요합니다 \n 새로운 버전으로 업데이트 해주세요.</string>
+    <string name="str_error">서버 지연 중입니다. 잠시 후 다시 실행해주세요.</string>
+    <string name="str_login">토큰이 만료되었습니다. 다시 로그인해주세요.</string>
+    <string name="str_login_name">이름</string>
+    <string name="str_login_mobile">휴대폰 번호</string>
+    <string name="str_login_pass">비밀번호</string>
+    <string name="str_login_enter">로그인</string>
+    <string name="str_login_register">인증요청</string>
+    <string name="str_reg_request">모바일 인증요청</string>
+    <string name="str_login_mobile_register">모바일 등록</string>
+    <string name="msg_error">네트워크 연결에 실패하였습니다.\n 다시 시도해 주세요.</string>
+    <string name="msg_mac_error">모바일 등록이 필요합니다. \n MAC 등록화면으로 넘어갑니다.</string>
+    <string name="msg_mac_success">모바일 등록이 완료되었습니다. \n 관리자에게 승인을 요청해주세요.</string>
+    <string name="msg_name_empty_error">이름을 입력해주세요.</string>
+    <string name="msg_telno_empty_error">휴대전화번호를 입력해주세요.</string>
+    <string name="msg_pw_empty_error">비밀번호를 입력해주세요.</string>
+    <string name="str_home_toolbar">%s 모바일 관리자ⓜ</string>
+    <string name="str_ntbd_toolbar">공지사항</string>
+    <string name="str_trsmis_toolbar">요청사항</string>
+    <string name="str_trsmis_teamselect">팀 선택</string>
+    <string name="str_trsmis_write">작성하기</string>
+    <string name="str_bid_not_found">현재까지 1순위 리스트가 존재하지 않습니다.</string>
+    <string name="str_last_bid_not_found">최종낙찰 리스트가 존재하지 않습니다.</string>
+    <string name="str_cmp">업체명: %s</string>
+    <string name="str_last_cmp">최종낙찰자: %s</string>
+    <string name="str_emp" formatted="false">영업:%1$s/%2$s \%% 분석:%3$s</string>
+    <string name="str_area">지역: %s</string>
+    <string name="str_noti_info" formatted="false">[%1$s] %2$s-%3$s</string>
+    <string name="str_license">면허: %s</string>
+    <string name="str_kind_item" formatted="false">[%1$s] / %2$s\%%</string>
+    <string name="str_bsn_item" >영업: %s</string>
+    <string name="str_consl_item">분석: %s</string>
+    <string name="str_count">(%s건)</string>
+    <string name="str_count_bilclt">%s건</string>
+    <string name="str_trsmis_group" formatted="false">[%s]%s</string>
+    <string name="str_trsmis_request" formatted="false">[%s>%s] \n %s</string>
+    <string name="str_trsmis_pendresult" formatted="false">[%s] \n %s</string>
+    <string name="str_trsmis_index">%s</string>
+    <string name="str_setting_alarm_text">앱 푸시 알림</string>
+    <string name="str_setting_alarm_text5">낙찰정보 및 알림음 설정</string>
+    <string name="str_setting_alarm_text2">낙찰가 별 알림 설정</string>
+    <string name="str_setting_alarm_text3">선택 사업장 낙찰정보 알림 수신</string>
+    <string name="str_alarm_silent">진동 푸시 알림</string>
+    <string name="str_alarm_silent_sub">진동상태에서 알림음 켜기</string>
+    <string name="str_alarm_sound_title">알림음 설정</string>
+    <string name="trsmis_team">팀을 선택해주세요.</string>
+    <string name="str_trsmis_write_display">전달내용</string>
+    <string name="str_trsmis_write_request">요청하기</string>
+    <string name="str_trsmis_write_select_team">지정자</string>
+    <string name="str_month">%s 월</string>
+    <string name="str_attend_toolbar">통합출근부</string>
+    <string name="str_attend_name">이름</string>
+    <string name="str_home_sbid_cnt">낙찰 %s 건</string>
+    <string name="str_acrslt_status_toolbar_text">팀실적현황(세부)</string>
+    <string name="str_home_anls_amt">분석 %s 원</string>
+    <string name="str_home_collect_amt">수금 %s 원</string>
+    <string name="str_version">현재버전 : %s</string>
+    <string name="str_new_version">최신버전 : %s</string>
+    <string name="str_attend_mon">%s일(월)</string>
+    <string name="str_attend_tue">%s일(화)</string>
+    <string name="str_attend_wen">%s일(수)</string>
+    <string name="str_attend_thr">%s일(목)</string>
+    <string name="str_attend_fri">%s일(금)</string>
+    <string name="str_phone_confirm">에스와이소프트 사내어플입니다. 사원 정보를 판단하기 위해 전화번호 권한이 필요합니다.\n\n계속 진행하시겠습니까?</string>
+    <string name="str_key">managersmanagers</string>
+    <string name="str_login_message">※ 본 프로그램의 내용과 정보는 자사의 고유 자산이므로\n사외반출 및 개인 데이터화를 금지합니다.</string>
+    <string name="str_login_center"><u>고객센터는 여기를 클릭하세요.</u></string>
+    <string name="str_ten_price">10억 이상</string>
+    <string name="str_twenty_price">15억 이상</string>
+    <string name="str_price_alarm">부터 알림이 발송됩니다.</string>
+    <string name="str_alarm_all"> 알림이 발송됩니다.</string>
+    <string name="write">작성하기</string>
+    <string name="apor">지정자</string>
+    <string name="enter_content">내용을 입력해주세요.</string>
+    <string name="status">상태</string>
+    <string name="inputTime">입력시간</string>
+    <string name="trsmis">요청사항</string>
+    <string name="statusAndResult">진행 및 결과</string>
+    <string name="group">그룹</string>
+    <string name="writer">요청자</string>
+    <string name="dlr">실처리자</string>
+    <string name="yyyy_mm">2018년 2월</string>
+    <string name="number">번호</string>
+    <string name="group_trsmis_statusAndResult">그룹 / 요청사항 / 진행 및 결과</string>
+    <string name="noResult">검색 결과가 없습니다.</string>
+    <string name="authToken">eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQVBQX1VTRVIiLCJpc0FnZW50IjpmYWxzZSwiZW1wTm0iOiLsnoTsm5Dsp4QiLCJpc3MiOiJzeXNvZnQiLCJpZCI6MTkzMSwiZXhwIjoxNTg5NTIyODMyfQ.pcM9pif4mG3Nlo3YXmYmfXwmk4z2PdxPNCwild77IZk</string>
+    <string name="refreshToken">eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQVBQX1VTRVIiLCJpc0FnZW50IjpmYWxzZSwiZW1wTm0iOiLsnoTsm5Dsp4QiLCJpc3MiOiJzeXNvZnQiLCJpZCI6MTkzMSwiZXhwIjoxNTkyMDI5OTcwfQ.bvsHzlCINcYwQxNYOWthUl1eW3Jj9U1z6bj5GKSDLKE</string>
+    <string name="selectTeam">팀 선택</string>
+</resources>
