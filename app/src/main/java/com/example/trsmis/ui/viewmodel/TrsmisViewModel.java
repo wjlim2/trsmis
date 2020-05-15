@@ -18,6 +18,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -55,25 +56,33 @@ public class TrsmisViewModel extends BaseViewModel {
 
         mJobCode.setValue(testEmp().getJobCd()); //사용자의 직무코드
         mApor.setValue(apor(testEmp().getJobCd())); //지정자
+
         Logger.d(mJobCode.getValue());
-        onListCall(mJobCode.getValue());
+        onListCall(mJobCode.getValue(), null);
     }
 
-    public void onListCall(String jobCd) {
+    public void onListCall(String jobCd, Date date) {
 
-        if (mTrsmisReqModel.getCurrentPage().equals("1")) {
+        if (mTrsmisReqModel.getCurrentPage().equals("1") && date == null) {
 
-            String dateToday = getDateToday(new Date()); //오늘 날짜
-            String dateBefore = getDateMonthBefore(-2); //두 달 전 날짜
+            String dateToday = getDateToString(new Date()); //오늘 날짜
+            Calendar cal = Calendar.getInstance();
+            cal.setTime(new Date());
+            String dateBefore = getDateMonthBefore(cal, -2); //두 달 전 날짜
 
             mTrsmisReqModel.setFindStrtDt(dateBefore); //시작일 설정
             mTrsmisReqModel.setFindEndDt(dateToday); //종료일 설정
             mTrsmisReqModel.setJobDstnctCd(jobCd); //직무코드 설정
 
-
             mLoading.setValue(View.VISIBLE);
-        } else {
-            Logger.d("Current Page Is Not 1");
+        } else if(date != null){
+            //두 달 전 날짜
+
+            Calendar cal = Calendar.getInstance();
+            cal.setTime(date);
+            mTrsmisReqModel.setFindStrtDt(getDateMonthBefore(cal, -2));
+            mTrsmisReqModel.setFindEndDt(getDateToString(date));
+            mTrsmisReqModel.setJobDstnctCd(jobDstnctCd);
         }
         Logger.d(mTrsmisReqModel);
         mService.trsmisCall(mTrsmisReqModel).subscribeOn(Schedulers.io())
@@ -81,35 +90,38 @@ public class TrsmisViewModel extends BaseViewModel {
                 .subscribe(new SingleObserver<Response<TrsmisResModel>>() {
 
                     @Override
-                    public void onSubscribe(Disposable d) {
-
-                    }
+                    public void onSubscribe(Disposable d) {}
 
                     @Override
                     public void onSuccess(Response<TrsmisResModel> trsmisResModelResponse) {
+                        //통신을 하는 시점에는 반드시 토큰을 전달한다.
+                        //만료된 토큰일 때는 서버에서 토큰을 새로 발급한다.
+                        //토큰을 새로 발급받았다면 받은 토큰을 로컬에 저장한다.
                         if (trsmisResModelResponse.headers().get("new_token") != null) {
                             Hawk.put("auth-token", trsmisResModelResponse.headers().get("new_token"));
                         }
+                        //통신 성공
                         if (trsmisResModelResponse.isSuccessful()) {
-                            Logger.d("ResponseBody = " + trsmisResModelResponse.body());
                             if (trsmisResModelResponse.body() != null) {
-                                ArrayList<Trsmis> trsmisList = trsmisResModelResponse.body().getTrsmisList();
-                                int trsmisCnt = trsmisResModelResponse.body().getTrsmisCnt();
-                                mTrsmisCnt.setValue(trsmisCnt);
+                                ArrayList<Trsmis> trsmisList = trsmisResModelResponse.body().getTrsmisList();//전달받은 데이터를 trsmisList에 저장한다.
+                                int trsmisCnt = trsmisResModelResponse.body().getTrsmisCnt();//아이템의 갯수를 저장한다.
+                                mTrsmisCnt.setValue(trsmisCnt);//아이템의 갯수는 최종적으로 어댑터에 전달된다.
                                 Logger.d(mTrsmisReqModel.getCurrentPage());
+                                //currentPage는 액티비티가 시작될때, 날짜가 변경될 때, 팀이 변경될 때 데이터리스트가 갱신되기때문에 1페이지부터 시작한다.
+                                //스크롤을 내려 데이터를 불러오는 경우에는 2페이지 이상이다.
                                 if (mTrsmisReqModel.getCurrentPage().equals("1")){
                                     mLoading.setValue(View.GONE);
                                     mTrsmisList.setValue(trsmisList);
                                 }
-
                             }
+                        //통신 실패
                         } else {
-                            Logger.d(trsmisResModelResponse.errorBody());
                             try {
                                 JSONObject jsonObject = null;
                                 if (trsmisResModelResponse.errorBody() != null) {
                                     jsonObject = new JSONObject(trsmisResModelResponse.errorBody().string());
                                 }
+                                //Access Denied 메시지를 받은 경우
                                 if (jsonObject != null && jsonObject.getString("message") != null) {
                                     if (jsonObject.getString("message").equals("Access Denied")) {
                                         mError.setValue("LOGIN");

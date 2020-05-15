@@ -90,7 +90,7 @@ public class AppUtil {
         }
     }
 
-    public static String getDateToday(Date date) {
+    public static String getDateToString(Date date) {
         String DateFormat = "yyyy-MM-dd";
         return new SimpleDateFormat(DateFormat, Locale.KOREA).format(date);
     }
@@ -100,8 +100,8 @@ public class AppUtil {
      * @param amount 현재 날짜에서 차감할 개월 수
      * @return 계산된 날짜를 yyyy-MM-dd 포맷으로 반환
      */
-    public static String getDateMonthBefore(int amount) {
-        Calendar cal = Calendar.getInstance();
+    public static String getDateMonthBefore(Calendar cal, int amount) {
+
         cal.add(Calendar.MONTH, amount);
         return new SimpleDateFormat("yyyy-MM-dd", Locale.KOREA).format(cal.getTime());
     }
@@ -123,4 +123,5 @@ public class AppUtil {
 
     return emp;
     }
+
 }

@@ -58,4 +58,8 @@ public class TrsmisAdapter extends RecyclerView.Adapter<TrsmisViewHolder> {
     public int getItemCount() {
         return mModels.size();
     }
+
+    public void setCount(int count) {
+        mTrsmisCnt = count;
+    }
 }

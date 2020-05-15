@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.example.trsmis.R;
 
-public class TrsmisWrite extends AppCompatActivity {
+public class TrsmisWriteActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

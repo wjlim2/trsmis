@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.activity.TrsmisWrite"/>
+        <activity android:name=".ui.activity.TrsmisWriteActivity"/>
         <activity android:name=".ui.activity.TrsmisDetailActivity" />
         <activity android:name=".ui.activity.TrsmisActivity">
             <intent-filter>
